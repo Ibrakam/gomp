@@ -1,0 +1,47 @@
+.home-btn
+{
+   
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;   
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .home-btn:hover {
+        color: #212529;
+        text-decoration: none;
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+
+    .home-btn:focus, .btn.focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .home-btn.disabled, .btn:disabled {
+        opacity: 0.65;
+    }
+
+a.home-btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none;
+}
+
+.light_green {
+    color: #82c91e
+}
+
+.light_orange {
+    color: #fd7e14
+}
+
+/* Custom */
+.uniroma3-turchese {
+    color: #269fb5;
+}
+/* Custom */

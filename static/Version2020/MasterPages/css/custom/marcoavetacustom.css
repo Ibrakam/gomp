@@ -1,0 +1,115 @@
+.toolBarContainer {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+    .toolBarContainer .buttonLabel {
+        text-align: center;
+        font-size: x-small;
+    }
+
+    .toolBarContainer .counterLabel {
+        background-color: #fa3e3e;
+        border-radius: 10px;
+        color: white;
+        margin-top: -55px;
+        margin-left: 45px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 0.9em;
+        position: absolute;
+        z-index: 1001;
+        -webkit-box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+    }
+
+.modal-backdrop {
+    z-index: 1 !important;
+}
+
+.ToolBar {
+    border: 1px dotted #cccccc;
+    background-color: #ededed;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 4px;
+}
+
+    .ToolBar table {
+    }
+
+        .ToolBar table .firstcell {
+            border-left: 2px dotted #cccccc;
+            width: 10px;
+        }
+
+        .ToolBar table .separator {
+            background-color: #ededed;
+            border-left: 1px solid #cdcdcd;
+            width: 1px;
+        }
+
+        .ToolBar table .smallText {
+            font-size: x-small;
+        }
+
+        .ToolBar table .normalcell {
+            min-width: 50px;
+            width: 50px;
+            height: 40px;
+            background-color: #ededed;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #ededed;
+            border-bottom: 1px solid #ededed;
+            border-top: 1px solid #ededed;
+            border-left: 1px solid #ededed;
+        }
+
+        .ToolBar table .hovercell {
+            min-width: 50px;
+            width: 50px;
+            height: 40px;
+            background-color: #ededed;
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #343434;
+            border-bottom: 1px solid #343434;
+            border-top: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+        }
+
+        .ToolBar table .clickedcell {
+            min-width: 50px;
+            width: 50px;
+            height: 40px;
+            background-color: #ededed;
+            text-align: center;
+            vertical-align: middle;
+            border-left: 1px solid #343434;
+            border-top: 1px solid #343434;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .ToolBar table .activecell {
+            min-width: 50px;
+            width: 50px;
+            height: 40px;
+            background-color: #eeeeee;
+            text-align: center;
+            vertical-align: middle;
+            border-left: 1px solid #343434;
+            border-top: 1px solid #343434;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+.smartEdu {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    left: 65px;
+}
+

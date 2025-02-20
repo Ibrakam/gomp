@@ -1,0 +1,849 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title id="masterTitle">smart_edu</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}?20241224" />
+    <link rel="stylesheet" href="{% static 'lib/select2/select2.min.css' %}?20241224" />
+    <link id="ToolBarCss" rel="stylesheet" type="text/css" media="screen, projection"
+          href="{% static 'Version2020/MasterPages/css/custom/marcoavetacustom.css' %}" />
+    
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- MDBootstrap Datatables -->
+    <link href="{% static 'Version2020/MasterPages/css/addons/datatables.min.css' %}" rel="stylesheet">
+    <!-- File CSS custom -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <!-- Summernote -->
+    <link rel="stylesheet" href="{% static 'Version2020/MasterPages/AdminLTE/summernote/summernote.css' %}" />
+    <!-- Toggle -->
+    <link rel="stylesheet" href="{% static 'Version2020/MasterPages/css/bootstrap2-toggle.css' %}" />
+    
+    <!-- Static menu -->
+    <link rel="stylesheet" media="screen, print" href="{% static 'Version2020/Portal/css/sweetalert2/sweetalert2.bundle.css' %}">
+
+    <!-- Home -->
+    <link href="{% static 'Version2020/Portal/css/desif.css' %}" rel="stylesheet" />
+    <link href="{% static 'Version2020/Portal/Controllers/Home/homeMenu.css' %}?20241224" rel="stylesheet" />
+    
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'Version2020/Portal/scripts/mobile.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'Version2020/MasterPages/src/js/jquery-ui-1.12.1.custom/jquery-ui.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/Templates/TopBar/topBarMenu.js' %}"></script>
+    <script src="{% static 'Scripts/languages/datepicker/jquery.ui.datepicker-it.js' %}?20241224" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'JSON/gompBase.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'JSON/Ludwig/LudwigBase.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'JSON/gompControls.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'JSON/toolbar.js' %}?20241224"></script>
+    <script src="{% static 'Scripts/jquery.maskedinput.js' %}?20241224" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/AdminLTE/summernote/summernote.js' %}?202412240214"></script>
+    
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/popper.min.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/bootstrap.min.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/src/js/bootstrap-toggle-master/js/bootstrap-toggle.js' %}?20241224"></script>
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/bootstrap2-toggle.js' %}?20241224"></script>
+    <link rel="stylesheet" href="{% static 'Version2020/MasterPages/src/js/bootstrap-toggle-master/css/bootstrap-toggle.css' %}?20241224">
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/mdb.min.js' %}?20241224"></script>
+    
+    <!-- Select2 -->
+    <script src="{% static 'Version2020/MasterPages/lib/select2/select2.min.js' %}?20241224"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'Version2020/MasterPages/FontAwesome/css/all.css' %}?20241224">
+    
+    <!-- MDBootstrap Datatables -->
+    <script type="text/javascript" src="{% static 'Version2020/MasterPages/js/addons/datatables.min.js' %}?20241224"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="{% static 'Version2020/MasterPages/js/site.js' %}?202412240214"></script>
+    <script src="{% static 'Version2020/Portal/scripts/generciControls.js' %}?202412240214"></script>
+
+    <!-- BEGIN: Menu -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- END: Menu -->
+
+    <script type="text/javascript" src="{% static 'Version2020/Portal/scripts/besmartTable.js' %}?202412240214"></script>
+    <script src="{% static 'Version2020/MasterPages/src/js/jquery-ui-1.12.1.custom/jquery-ui.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static 'Version2020/MasterPages/src/js/jquery-ui-1.12.1.custom/jquery-ui.css' %}">
+
+    <script type="text/javascript" src="{% static 'Version2020/Portal/Controllers/Menu/portalMenu.js' %}?202412240214"></script>
+    <script type="text/javascript" src="{% static 'Version2020/Portal/Controllers/Home/homeMenu.js' %}?202412240214"></script>
+    <script type="text/javascript" src="{% static 'Version2020/Portal/scripts/besmartToolBar.js' %}?2024122402"></script>
+    <script type="text/javascript" src="{% static 'Version2020/Portal/Controllers/Menu/breadcrumbs.js' %}?202412240214"></script>
+
+    <script src="{% static 'Version2020/Portal/scripts/sweetalert2/sweetalert2.bundle.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/uniroma3.css' %}" />
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+    <script type="text/javascript">
+         $(function () {
+             $("#mainDiv").login({
+                url: "/Login",
+                pipe: "f455d516-564e-4c48-aa68-1df74b0cd91c",
+                redirect: "/ChangeLanguage/Language/ENG",
+                google:"False",
+                spid: "True",
+                cie: "True",
+                showSpidTest: "False"
+             });
+         });
+    </script>
+    <script type="text/javascript">
+        function setLogon(appVersion, appOS, deviceID) {
+            $("#AppVersion").val(appVersion);
+            $("#AppOS").val(appOS);
+            if (deviceID) {
+                $("#DeviceID").val(deviceID);
+            }
+        }
+
+        function doLogon(userName, token, appVersion, appOS, deviceID) {
+
+
+            var dataToPost = [];
+            dataToPost.push({ name: "command", value: "appResume" });
+            dataToPost.push({ name: "username", value: userName });
+            dataToPost.push({ name: "token", value: token });
+            dataToPost.push({ name: "appversion", value: appVersion });
+            dataToPost.push({ name: "appos", value: appOS });
+            if (deviceID) {
+                dataToPost.push({ name: "deviceID", value: deviceID });
+            } else {
+                dataToPost.push({ name: "deviceID", value: "" });
+            }
+
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: '/Mobile/Ajax/Public/a.aspx',
+                data: dataToPost,
+                dataType: 'json',
+                success: function (result) {
+                    console.log("Logon result: " + result);
+
+
+                    if (result != "00000000-0000-0000-0000-000000000000") {
+                        document.location.href = "/";
+                    } else {
+                        //Droid
+                        if (window.smart_edu_mobile) {
+                            window.smart_edu_mobile.wrongLogon();
+                        }
+                        //IOS
+                        if (window.webkit && window.webkit.messageHandlers.smart_edu_mobile) {
+                            window.webkit.messageHandlers.smart_edu_mobile.postMessage({ message: "wrongLogon" });
+                        }
+                    }
+                },
+                error: function (xmlhttprequest, textstatus, errorthrown) {
+                    console.log("error: " + errorthrown);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-small-root-get");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-medium-root-get");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-large-root-get");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-xlarge-root-get");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-small-root-post");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-medium-root-post");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-large-root-post");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+
+        $(document).ready(function () {
+            var rootList = $("#spid-idp-list-xlarge-root-post");
+            var idpList = rootList.children(".spid-idp-button-link");
+            var lnkList = rootList.children(".spid-idp-support-link");
+            while (idpList.length) {
+                rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+            }
+            rootList.append(lnkList);
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+
+
+        function setMobileTitle(title) {
+            //nop
+        }
+
+        function setMobileBackButton(action, title) {
+            //nop
+        }
+    </script>
+
+
+<style>
+    .header {
+    margin: 0;
+    padding: 0;
+    display: table;
+    height: 103px;
+    /*padding : 17px 0 30px 0;*/
+    border: 0px;
+    background: #003466 url({% static  'images/sfondo.gif'%});
+    width: 100%;
+}
+
+
+    .header .uniroma3 {
+        display: table-cell;
+        width: 50%;
+        background: url({% static  'images/logo-uniroma3.png' %}) no-repeat 93px 5px;
+    }
+
+
+    .header .smart-edu {
+        display: table-cell;
+        width: 50%;
+        background: url({% static '/images/smart-edu.png' %}) no-repeat 100% 0;
+    }
+html {
+    background: #b0cef2 url({% static '/images/landing21-1.jpg' %}) no-repeat center bottom !important;
+    background-size: cover;
+}
+</style>
+
+</head>
+<body id="bodyTemplateColor" class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div id="contentWrapperTO0" class="content-wrapper">
+
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid2">
+
+                    <main>
+
+                        
+
+<div class="header">
+    <div class="uniroma3"></div>
+    <div class="smart-edu"></div>
+</div>
+
+<div id="mainDiv">
+    <div id="loginPanel" smart-role="loginPanel" smart-level="main" class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+
+
+            <div class="user_card">
+                <a class="language" href="/ChangeLanguage/Language/ENG" data-toggle="tooltip" data-placement="bottom" title="Cambia lingua"><i class="fad fa-language fa-2x"></i></a>
+
+
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container brand_logo_container_mobile">
+                        <img src="{% static '/images/Uniroma3_logon.png' %}" class="brand_logo brand_logo_mobile" alt="Logo">
+                    </div>
+                </div>
+                <div class="input-group-append">
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <div style="display: block; margin-top: 15px; left:0; right: 0; width: 95%;">
+                        <div class="text-center mb-3 mt-4 mt-md-n5 font-weight-normal">
+                            <span class="font-weight-bold">UniRomaTre</span> / Portale
+                            studenti
+                        </div>
+                        <!--Error message-->
+                        
+<div id="errorAlert" smart-role="error" smart-level="main">
+    <div class="alert alert-danger alert-dismissible fade show">
+        <i class="fas fa-exclamation-triangle"></i> &nbsp;
+        <span class="font-weight-bold" id="errorAlertTitle">Errore!</span> 
+        <span id="errorAlertBody">Ci sono alcuni errori</span>
+        <ul id="errorsList">
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#errorAlert").hide();
+    });
+
+    function hideErrorAlert() {
+        $("#errorAlert").slideUp();
+    }
+
+    function showErrorAlert(title, body, errors) {
+        if (title === undefined) {
+            title = $("#LblIDc03bb8e4_9180_4675_aaf2_5ad51e842025").html();
+        }
+        $("#errorAlertTitle").text(title);
+
+        if (body === undefined) {
+            body = $("#LblID043e2a67_776e_4dff_8491_d7b68504d809").html();
+        }
+        $("#errorAlertBody").text(body);
+
+        if (errors !== undefined) {
+            $("#errorsList").html("");
+            $.each(errors, function (index, error) {
+                var li = $("<li/>");
+                $("#errorsList").append(li);
+                li.html(error);
+            });
+        }
+
+        $("#errorAlert").slideDown();
+    }
+</script>
+
+                        <!--Error message-->
+
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item border-primary">
+                                <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Psw
+                                </a>
+                            </li>
+                            <li class="nav-item" id="liSpid">
+                                <a class="nav-link" id="spid-tab" data-toggle="tab" href="#spid" role="tab" aria-controls="spid" aria-selected="false">
+                                    
+                                    <img src="{% static '/images/SPID/spid-logo-c-lb_h20.png'%}" alt="SPID" />
+                                </a>
+                            </li>
+                            <li class="nav-item" id="liCieAuth">
+                                <a class="nav-link" id="cie-tab" data-toggle="tab" href="#cie" role="tab" aria-controls="cie" aria-selected="false">
+                                    <i class="fas fa-address-card mr-2"></i>CIE
+                                </a>
+                            </li>
+                            <li class="nav-item" id="liGoogleAuth">
+                                <a class="nav-link" id="google-tab" data-toggle="tab" href="#google" role="tab" aria-controls="google" aria-selected="false">
+                                    <i class="fab fa-google mr-2"></i>Google
+                                </a>
+                            </li>
+                            <li class="nav-item" id="liShibbolethAuth">
+                                <a class="nav-link" id="shibboleth-tab" data-toggle="tab" href="#shibboleth" role="tab" aria-controls="shibboleth" aria-selected="false">
+                                    <i class="fab fa-stripe-s mr-2"></i>Shib
+                                </a>
+                            </li>
+                           
+                        </ul>
+
+
+                        <div class="tab-content p-3" id="myTabContent" style="min-height:240px">
+                            <!--user-->
+                            <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+                                <div class="input-group mb-3">
+
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+
+                                    <input type="text" id="userName" class="form-control input_user" placeholder="ID">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+
+                                    <input type="password" id="password" class="form-control input_pass" placeholder="Password">
+                                </div>
+
+                                <div class="justify-content-center">
+
+                                    <div class="d-flex justify-content-center links">
+                                        <button name="button" id="loginButton" class="btn btn-block login_btn2">Login <i class="fas fa-sign-in-alt"></i></button>
+                                        <span id="spinnerLogin"><i class="fas fa-spinner fa-spin fa-2x"></i></span>
+                                    </div>
+                                    <!--mobile-->
+                                    <div class="smartedu_onlyMobile" style="margin-top: 15px;">
+                                        <div class="d-flex justify-content-center links">
+                                            <a class="btn btn-block btn-success" href="/NewAccount">Registrati <span><i class="fas fa-user-circle"></i></span></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="smartedu_onlyMobile" style="margin-top: 15px;">
+                                        <div class="d-flex justify-content-center links">
+                                            <a class="btn btn-block btn-warning" href="/ForgotPassword">Password dimenticata?<span><i class="fas fa-key"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end mobile-->
+                                <!--desktop-->
+                                <div class="mt-2 smartedu_hiddenMobile row">
+                                    <div class="d-flex justify-content-center links col">
+                                        <a href="/NewAccount"><i class="fas fa-user-circle"></i> Registrati </a>
+                                    </div>
+                                    <div class="d-flex justify-content-center links col">
+                                        <a href="/ForgotPassword"><i class="fa-solid fa-key"></i> Password dimenticata?</a>
+                                    </div>
+
+                                </div>
+                                <!--end desktop-->
+                            </div>
+                            <!--end user-->
+                            <!--spid-->
+                            <div class="tab-pane fade" id="spid" role="tabpanel" aria-labelledby="spid-tab">
+                                <div id="spidContainer">
+                                    <h3 class="sr-only">Accedi con SPID</h3>
+
+
+<small>
+    Con il Sistema Pubblico di Identit&#224; Digitale accedi in un click ai servizi online della Pubblica Amministrazione e dei privati aderenti.
+</small>
+
+
+<div class="row align-items-center mt-2">
+
+
+    <div class="col">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Apre una nuova finestra</span><small>Maggiori informazioni su SPID</small>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Apre una nuova finestra</span><small>Non hai SPID?</small>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Apre una nuova finestra</span><small>Serve aiuto?</small>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="col text-center">
+        <a href="#" id="loginWithSpidButton" class="italia-it-button italia-it-button-size-m button-spid" spid-idp-button="#spid-idp-button-medium-get" aria-haspopup="true" aria-expanded="false">
+            <span class="italia-it-button-icon">
+                <img src="{% static  '/images/SPID/spid-ico-circle-bb.svg' %}" onerror="" alt="" />
+            </span>
+            <span class="italia-it-button-text">Entra con SPID</span>
+        </a>
+
+        <!--spid list type-->
+        <script type="text/javascript" src='{% static "/Scripts/SPID/spid-sp-access-button.min.js?2024122402"%}'></script>
+<link rel="stylesheet" href='{% static  "/Styles/spid-sp-access-button.min.css?2024122402"%}' />
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-small-root-get");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-medium-root-get");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-large-root-get");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-xlarge-root-get");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-small-root-post");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-medium-root-post");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-large-root-post");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+
+    $(document).ready(function () {
+        var rootList = $("#spid-idp-list-xlarge-root-post");
+        var idpList = rootList.children(".spid-idp-button-link");
+        var lnkList = rootList.children(".spid-idp-support-link");
+        while (idpList.length) {
+            rootList.append(idpList.splice(Math.floor(Math.random() * idpList.length), 1)[0]);
+        }
+        rootList.append(lnkList);
+    });
+</script>
+
+<br />
+
+
+
+<div id="spid-idp-button-medium-get" class="spid-idp-button spid-idp-button-tip spid-idp-button-relative" style="margin-bottom:10%">
+    <ul id="spid-idp-list-medium-root-get" class="spid-idp-button-menu" aria-labelledby="spid-idp">
+        <li class="spid-idp-button-link" data-idp="arubaid" id="spid-idp">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=aruba">
+                <span class="spid-sr-only">Aruba ID</span>
+                <img src="{% static 'images/SPID/spid-idp-arubaid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-arubaid.png' %}'; this.onerror=null;" 
+                     alt="Aruba ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="infocertid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=infocert">
+                <span class="spid-sr-only">Infocert ID</span>
+                <img src="{% static 'images/SPID/spid-idp-infocertid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-infocertid.png' %}'; this.onerror=null;" 
+                     alt="Infocert ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="intesi">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=intesi">
+                <span class="spid-sr-only">Intesi Group S.p.A.</span>
+                <img src="{% static 'images/SPID/spid-idp-intesigroupspid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-intesigroupspid.png' %}'; this.onerror=null;" 
+                     alt="Intesi Group S.p.A." />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="infocamereid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=infocamereid">
+                <span class="spid-sr-only">Infocamere ID</span>
+                <img src="{% static 'images/SPID/spid-idp-infocamereid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-infocamereid.png' %}'; this.onerror=null;" 
+                     alt="Infocamere ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="lepida">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=lepida">
+                <span class="spid-sr-only">Lepida S.p.A.</span>
+                <img src="{% static 'images/SPID/spid-idp-lepidaid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-lepidaid.png' %}'; this.onerror=null;" 
+                     alt="Lepida S.p.A." />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="namirialid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=namirial">
+                <span class="spid-sr-only">Namirial ID</span>
+                <img src="{% static 'images/SPID/spid-idp-namirialid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-namirialid.png' %}'; this.onerror=null;" 
+                     alt="Namirial ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="posteid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=poste">
+                <span class="spid-sr-only">Poste ID</span>
+                <img src="{% static 'images/SPID/spid-idp-posteid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-posteid.png' %}'; this.onerror=null;" 
+                     alt="Poste ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="sielteid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=sielte">
+                <span class="spid-sr-only">Sielte ID</span>
+                <img src="{% static 'images/SPID/spid-idp-sielteid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-sielteid.png' %}'; this.onerror=null;" 
+                     alt="Sielte ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="spiditalia">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=register">
+                <span class="spid-sr-only">SPIDItalia Register.it</span>
+                <img src="{% static 'images/SPID/spid-idp-spiditalia.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-spiditalia.png' %}'; this.onerror=null;" 
+                     alt="SpidItalia" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="teamsystemid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=teamsystemid">
+                <span class="spid-sr-only">TeamSystem ID</span>
+                <img src="{% static 'images/SPID/spid-idp-teamsystemid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-teamsystemid.png' %}'; this.onerror=null;" 
+                     alt="TeamSystem ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="timid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=trust">
+                <span class="spid-sr-only">Tim ID</span>
+                <img src="{% static 'images/SPID/spid-idp-timid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-timid.png' %}'; this.onerror=null;" 
+                     alt="Tim ID" />
+            </a>
+        </li>
+        <li class="spid-idp-button-link" data-idp="etnaid">
+            <a href="/SpidOut/SpidIn?spidTest=0&tId=&idp=etna">
+                <span class="spid-sr-only">Etna ID</span>
+                <img src="{% static 'images/SPID/spid-idp-etnaid.svg' %}" 
+                     onerror="this.src='{% static 'images/SPID/spid-idp-etnaid.png' %}'; this.onerror=null;" 
+                     alt="Etna ID" />
+            </a>
+        </li>
+        <!--################### Idp di TEST ################################## -->
+
+        <!--################### FINE Idp di TEST ############################# -->
+        
+    </ul>
+</div>
+        <!--spid list type-->
+
+    </div>
+
+    
+
+</div>
+<div class="text-center">
+    <img id="spid-agid" class="w-50" src="/images/spid-agid-logo-lb.png" alt="Logo SPID - AGID - Agenzia per l'Italia Digitale">
+</div>
+
+
+
+                                </div>
+                            </div>
+                            <!--end spid-->
+                            <!--cie-->
+                            <div class="tab-pane fade" id="cie" role="tabpanel" aria-labelledby="cie-tab">
+                                <div id="divCieAuth">
+                                    
+
+<h3 class="sr-only">Accedi con identità digitale CIE</h3>
+<div class="row align-items-center">
+    <div class="col text-center" id="CieContainer">
+
+        <a href="#">
+            <img id="cie" src="{% static  '/images/cie.png' %}" alt="Accedi con CIE">
+        </a>
+
+    </div>
+    <div class="col">
+        <img id="ministero-interno" class="img-fluid mx-auto" src="{% static  '/Version2020/Portal/img/MI_logo.png'%}" alt="Logo del Ministero dell'Interno">
+    </div>
+</div>
+<br />
+<p>
+    La Carta di Identità Elettronica (CIE) è il documento personale che attesta l'identità del cittadino.
+    Dotata di microprocessore, oltre a comprovare l'identità personale, permette l'accesso ai servizi digitali della Pubblica Amministrazione.
+    <a href="#" target="_blank" rel="noopener noreferrer">
+        <span class="sr-only">Apre una nuova finestra</span>Maggiori informazioni su CIE
+    </a>
+</p>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!--end cie-->
+                            <!--google-->
+
+                            <div class="tab-pane fade" id="google" role="tabpanel" aria-labelledby="google-tab">
+                                <div id="divGoogleAuth">
+                                    Esegui l'accesso con il tuo account Google<br />
+                                    <div class="d-flex justify-content-center links mt-2">
+                                        <a id="loginWithGoogleButton" class="btn btn-block btn-danger" href="#" role="button" title="Accedi con Google">
+                                            Accedi con Google <span><i class="fab fa-google"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end google-->
+                            <!--shibboleth -->
+                            <div class="tab-pane fade" id="shibboleth" role="tabpanel" aria-labelledby="shibboleth-tab">
+                                <div id="divShibbolethAuth">
+                                    Esegui l&#39;accesso con Shibboleth<br />
+                                    <div class="d-flex justify-content-center links mt-2">
+                                        <a id="loginWithShibbolethButton" class="btn btn-info btn-lg btn-block" href="#" role="button" title="Accedi con Shibboleth">
+                                            Accedi con Shibboleth
+                                            <span><i class="fab fa-stripe-s"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end shibboleth-->
+                           
+                        </div>
+
+                        <!--end tab-->
+                        <!--app
+
+                                                <div class="d-flex justify-content-center links ">
+                                                    <div>
+                                                        <a href="https://apps.apple.com/it/app/smart-edu-mobile-studenti/id1344879229?itsct=apps_box_link&itscg=30200">
+                                                            <img class="appleStore"  src="~/Version2020/Portal/img/StoreImgLink/appleStore.png" alt="Scarica su App Store" />
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <a href='https://play.google.com/store/apps/details?id=studenti.test.besmart.it.mobilestudenti&gl=IT&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                                                            <img class="googleStore" alt='Disponibile su Google Play' src='~/Version2020/Portal/img/StoreImgLink/googleStore.png' />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                        app-->
+
+                        <div class="d-flex justify-content-center links ">
+                            <div>
+                                <a href="https://apps.apple.com/it/app/smart-edu-mobile-studenti/id1344879229?itsct=apps_box_link&itscg=30200">
+                                    <img class="appleStore" src="{% static '/images/appleStore.png'%}" alt="Scarica su App Store" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href='https://play.google.com/store/apps/details?id=studenti.test.besmart.it.mobilestudenti&gl=IT&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                                    <img class="googleStore" alt='Disponibile su Google Play' src='{% static "/images/googleStore.png" %}' />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<smartMessage>needLogon</smartMessage>-->
+                <!-- <div class="hidden">
+                    <label for="ReturnUrl">ReturnUrl</label><input type="text" id="ReturnUrl" />
+                    <label for="AppVersion">AppVersion</label><input type="text" id="AppVersion" />
+                    <label for="AppOS">AppOS</label><input type="text" id="AppOS" />
+                    <label for="DeviceID">DeviceID</label><input type="text" id="DeviceID" />
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+                    </main>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <p style="margin-bottom:30px"> </p>
+    </div>
+
+    <footer class="page-footer font-small blue-gradient fixed-bottom smartedu_hiddenMobile">
+        <div class="footer-copyright text-center rgba-white-strong py-2 ">
+            <small>
+                smart_edu versione
+                12.0.0.1
+                -
+                anonimo
+                &#64; WEB01.8560/0xl3t1wag2jlzcpusuux2jtz
+                - &#169; <a href="http://www.besmart.it">www.besmart.it</a> 2005-2024
+            </small>
+        </div>
+    </footer>
+
+
+    <!--Waiting-->
+    <div style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 5000; display: none; background-color: #ffffff;" class="mobileSwipeLoading">
+        <div style="position: fixed; top: 25%; bottom: 25%; left: 5%; right: 5%; text-align: center; height: 75%;">
+            <img src="/images/smart-edu.png" class="mobileSwipeLoadingImage" />
+            <br />
+            <i class="fad fa-spinner fa-5x fa-spin"></i>
+        </div>
+    </div>
+    <!--Waiting-->
+    <!--<smartMessage>wellDone</smartMessage>-->
+</body>
+</html>

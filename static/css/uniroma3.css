@@ -1,0 +1,76 @@
+body,
+html {
+    padding-top: 0 !important;
+}
+
+.appleStore {
+    margin-top: 5.5px;
+    width: 130px;
+}
+.googleStore {
+    width: 140px;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    display: table;
+    height: 103px;
+    /*padding : 17px 0 30px 0;*/
+    border: 0px;
+    background: #003466 url(/static/images/sfondo.gif);
+    width: 100%;
+}
+
+
+    .header .uniroma3 {
+        display: table-cell;
+        width: 50%;
+        background: url(/images/logo-uniroma3.png) no-repeat 93px 5px;
+    }
+
+
+    .header .smart-edu {
+        display: table-cell;
+        width: 50%;
+        background: url(/images/smart-edu.png) no-repeat 100% 0;
+    }
+html {
+    background: #b0cef2 url(/images/landing21-1.jpg) no-repeat center bottom !important;
+    background-size: cover;
+}
+body {
+    background: none !important;
+}
+
+.user_card {
+    background: #ffffff url(/static/Version2020/Portal/img/besmart.png) no-repeat 95% 10px;
+}
+
+
+    @media (max-width : 650px) {
+
+        body, html {
+            padding-top: 1em !important;
+        }
+
+        .header {
+            display: none;
+        }
+
+        
+        .appleStore {
+            margin-top: -6px !important;
+            width: 70px;
+        }
+
+        .googleStore {
+            margin-top: -9px;
+            width: 72px;
+        }
+
+        .user_card {
+            background: #ffffff url(/Version2020/Portal/img/besmart_small.png) no-repeat 99% 10px;
+        }
+
+    }
